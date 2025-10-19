@@ -26,12 +26,6 @@ const CooperativeSection = () => {
     }
   ];
 
-  const promo = {
-    rice: "1 Bag of Rice",
-    halfRice: "Half Bag of Rice",
-    minPayment: "500K - 900K"
-  };
-
   return (
     <section id="cooperative" className="cooperative-section section">
       <div className="container">
@@ -49,16 +43,15 @@ const CooperativeSection = () => {
               <h3>About Our Cooperative</h3>
               <p>
                 Made Easy Cooperative is well registered and licensed by the Lagos State Cooperative 
-                Society to carry out Cooperative businesses or transactions. We offer our members 
-                exceptional benefits including high dividends, easy loans, and special promotions.
+                Society to carry out Cooperative businesses or transactions.
               </p>
             </div>
 
             <div className="registration-info">
-              <h4>Registration Details</h4>
+              <h4>Bank Details</h4>
               <div className="bank-details">
                 <div className="bank-item">
-                  <span className="bank-label">Bank Name:</span>
+                  <span className="bank-label">Bank:</span>
                   <span className="bank-value">MADE EASY FUND LIMITED</span>
                 </div>
                 <div className="bank-item">
@@ -89,13 +82,13 @@ const CooperativeSection = () => {
             <span className="promo-icon">🎁</span>
             <span>10th Year Anniversary Mega Promo</span>
           </div>
-          <h3>Special Offer: Buy a Plot Today & Made Easy Home Will Do Your Shopping!</h3>
+          <h3>Buy a Plot Today & Made Easy Home Will Do Your Shopping!</h3>
           <div className="promo-details">
             <div className="promo-item">
               <div className="promo-icon-large">🛍️</div>
               <div>
-                <h4>Payment: {promo.minPayment}</h4>
-                <p className="promo-reward">Get {promo.halfRice}</p>
+                <h4>Payment: 500K - 900K</h4>
+                <p className="promo-reward">Get Half Bag of Rice</p>
               </div>
             </div>
             <div className="promo-divider">OR</div>
@@ -103,7 +96,7 @@ const CooperativeSection = () => {
               <div className="promo-icon-large">🎉</div>
               <div>
                 <h4>Payment: 1M & Above</h4>
-                <p className="promo-reward">Get {promo.rice}</p>
+                <p className="promo-reward">Get 1 Bag of Rice</p>
               </div>
             </div>
           </div>

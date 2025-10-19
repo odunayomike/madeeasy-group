@@ -1,0 +1,244 @@
+.contact-section {
+  background-color: var(--gray-50);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.contact-card h3 {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-link {
+  color: var(--primary-green);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--dark-green);
+  text-decoration: underline;
+}
+
+.office-locations {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.locations-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-green);
+}
+
+.locations-title svg {
+  color: var(--primary-green);
+}
+
+.location-card {
+  background-color: var(--gray-50);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--primary-green);
+}
+
+.location-card:last-child {
+  margin-bottom: 0;
+}
+
+.location-header {
+  margin-bottom: 1rem;
+}
+
+.location-badge {
+  display: inline-block;
+  background-color: var(--primary-green);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.address {
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.location-phones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.phone-link {
+  color: var(--primary-green);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.phone-link:hover {
+  color: var(--dark-green);
+}
+
+.branch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.branch-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.branch-marker {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.branch-item p {
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+  color: var(--white);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-box h3 {
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.cta-box p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn-primary {
+  background-color: var(--white);
+  color: var(--primary-green);
+}
+
+.cta-buttons .btn-primary:hover {
+  background-color: var(--gray-50);
+}
+
+.cta-buttons .btn-secondary {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.cta-buttons .btn-secondary:hover {
+  background-color: var(--white);
+  color: var(--primary-green);
+}
+
+@media (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .cta-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-buttons a {
+    width: 100%;
+  }
+}
