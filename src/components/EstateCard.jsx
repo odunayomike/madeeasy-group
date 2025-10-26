@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, CheckCircle, Tag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './EstateCard.css';
 
 const EstateCard = ({ estate }) => {
@@ -7,8 +7,7 @@ const EstateCard = ({ estate }) => {
     <div className="estate-card">
       {estate.discount && (
         <div className="discount-badge">
-          <Tag size={16} />
-          <span>{estate.discount} OFF</span>
+          {estate.discount} OFF
         </div>
       )}
 
@@ -20,8 +19,7 @@ const EstateCard = ({ estate }) => {
       </div>
 
       <div className="estate-location">
-        <MapPin size={18} />
-        <span>{estate.location}</span>
+        {estate.location}
       </div>
 
       <p className="estate-description">{estate.description}</p>
@@ -29,8 +27,7 @@ const EstateCard = ({ estate }) => {
       <div className="estate-features">
         {estate.features.map((feature, index) => (
           <div key={index} className="feature-tag">
-            <CheckCircle size={14} />
-            <span>{feature}</span>
+            {feature}
           </div>
         ))}
       </div>
@@ -73,7 +70,7 @@ const EstateCard = ({ estate }) => {
         </div>
       </div>
 
-      <a href="#contact" className="estate-cta">Contact Us</a>
+      <Link to="/contact" className="estate-cta">Contact Us</Link>
     </div>
   );
 };

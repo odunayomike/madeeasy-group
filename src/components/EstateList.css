@@ -1,12 +1,19 @@
 .estates-section {
-  background-color: var(--white);
+  background-color: #f9fafb;
+  padding: 4rem 0;
+}
+
+.estates-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .estates-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   flex-wrap: wrap;
   gap: 2rem;
 }
@@ -14,15 +21,11 @@
 .filter-container {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  background-color: var(--gray-50);
-  padding: 0.75rem 1.25rem;
+  background-color: #ffffff;
+  padding: 0.875rem 1.5rem;
   border-radius: 0.5rem;
-  border: 2px solid var(--gray-200);
-}
-
-.filter-container svg {
-  color: var(--primary-green);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .filter-select {
@@ -33,6 +36,7 @@
   color: var(--text-dark);
   cursor: pointer;
   outline: none;
+  padding-right: 0.5rem;
 }
 
 .filter-select:focus {
@@ -42,27 +46,37 @@
 .estates-count {
   font-size: 0.95rem;
   color: var(--text-light);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .estates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 2.5rem;
 }
 
 .no-results {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   color: var(--text-light);
   font-size: 1.125rem;
 }
 
 @media (max-width: 768px) {
+  .estates-section {
+    padding: 4rem 0;
+  }
+
+  .estates-container {
+    padding: 0 1.5rem;
+  }
+
   .estates-header {
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 2rem;
   }
 
   .filter-container {
@@ -75,5 +89,6 @@
 
   .estates-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }

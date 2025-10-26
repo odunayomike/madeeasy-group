@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, Building2, Users, Phone } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,42 +16,42 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home', icon: <Home size={18} /> },
-    { name: 'Estates', href: '#estates', icon: <Building2 size={18} /> },
-    { name: 'Cooperative', href: '#cooperative', icon: <Users size={18} /> },
-    { name: 'Contact', href: '#contact', icon: <Phone size={18} /> },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Estates', href: '/estates' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="container navbar-container">
-        <div className="navbar-brand">
-          <Building2 size={32} className="brand-icon" />
-          <div className="brand-text">
-            <h1>Made Easy</h1>
-            <p>Homes & Properties</p>
-          </div>
-        </div>
+      <div className="navbar-container">
+        <Link to="/" className="navbar-brand">
+          <span className="brand-logo">MADE EASY</span>
+          <span className="brand-tagline">Homes & Properties</span>
+        </Link>
 
         {/* Desktop Menu */}
         <ul className="nav-links desktop-menu">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} className="nav-link">
-                {link.icon}
-                <span>{link.name}</span>
-              </a>
+              <Link
+                to={link.href}
+                className={`nav-link ${location.pathname === link.href ? 'active' : ''}`}
+              >
+                {link.name}
+              </Link>
             </li>
           ))}
         </ul>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="mobile-menu-btn"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          <span className={`hamburger ${isOpen ? 'open' : ''}`}></span>
         </button>
 
         {/* Mobile Menu */}
@@ -59,14 +60,13 @@ const Navbar = () => {
             <ul className="mobile-nav-links">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a 
-                    href={link.href} 
-                    className="mobile-nav-link"
+                  <Link
+                    to={link.href}
+                    className={`mobile-nav-link ${location.pathname === link.href ? 'active' : ''}`}
                     onClick={() => setIsOpen(false)}
                   >
-                    {link.icon}
-                    <span>{link.name}</span>
-                  </a>
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>

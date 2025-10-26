@@ -1,0 +1,77 @@
+.estates-page {
+  padding-top: 80px;
+}
+
+/* Estates Hero */
+.estates-hero {
+  position: relative;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.estates-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.85) 0%, rgba(34, 197, 94, 0.75) 50%, rgba(74, 222, 128, 0.65) 100%);
+}
+
+.estates-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.estates-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.estates-hero-content p {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .estates-page {
+    padding-top: 70px;
+  }
+
+  .estates-hero {
+    height: 40vh;
+  }
+
+  .estates-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .estates-hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .estates-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .estates-hero-content p {
+    font-size: 1rem;
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Building2, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { contactInfo } from '../data/estates';
 import './Footer.css';
 
@@ -8,18 +9,15 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-brand">
-              <Building2 size={32} />
-              <div>
-                <h3>Made Easy</h3>
-                <p>Homes & Properties</p>
-              </div>
+              <h3>MADE EASY</h3>
+              <p>Homes & Properties</p>
             </div>
             <p className="footer-description">
-              Your trusted partner in affordable and secured property ownership. 
+              Your trusted partner in affordable and secured property ownership.
               Making your dream home a reality for over 10 years.
             </p>
             <div className="social-links">
@@ -41,10 +39,11 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Quick Links</h4>
             <ul className="footer-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#estates">Our Estates</a></li>
-              <li><a href="#cooperative">Cooperative</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/estates">Our Estates</Link></li>
+              <li><Link to="/gallery">Gallery</Link></li>
+              <li><Link to="/contact">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -54,8 +53,8 @@ const Footer = () => {
               <li>Land Sales</li>
               <li>Property Development</li>
               <li>Real Estate Brokerage</li>
-              <li>Cooperative Society</li>
               <li>Property Consultation</li>
+              <li>Estate Management</li>
             </ul>
           </div>
 
@@ -63,7 +62,7 @@ const Footer = () => {
             <h4>Contact Us</h4>
             <ul className="footer-contact">
               <li>
-                <Phone size={18} />
+                <span className="contact-label">Phone</span>
                 <div>
                   {contactInfo.phones.slice(0, 2).map((phone, index) => (
                     <a key={index} href={`tel:${phone}`}>{phone}</a>
@@ -71,11 +70,11 @@ const Footer = () => {
                 </div>
               </li>
               <li>
-                <Mail size={18} />
+                <span className="contact-label">Email</span>
                 <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
               </li>
               <li>
-                <MapPin size={18} />
+                <span className="contact-label">Address</span>
                 <span>Suite 1621, 1st Floor Yemosa Plaza, Egbeda, Lagos</span>
               </li>
             </ul>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import EstateCard from './EstateCard';
 import { estates } from '../data/estates';
-import { Filter } from 'lucide-react';
 import './EstateList.css';
 
 const EstateList = () => {
@@ -23,7 +22,7 @@ const EstateList = () => {
 
   return (
     <section id="estates" className="estates-section section">
-      <div className="container">
+      <div className="estates-container">
         <div className="estates-header">
           <div>
             <h2 className="section-title">Our Premium Estates</h2>
@@ -33,9 +32,8 @@ const EstateList = () => {
           </div>
 
           <div className="filter-container">
-            <Filter size={20} />
-            <select 
-              value={filter} 
+            <select
+              value={filter}
               onChange={(e) => setFilter(e.target.value)}
               className="filter-select"
             >
