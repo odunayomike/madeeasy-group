@@ -1,38 +1,38 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './GallerySlider.css';
+import gallery1 from '../assets/images/madeeasypictures/gallery1.jpg';
+import gallery2 from '../assets/images/madeeasypictures/gallery2.jpg';
+import gallery3 from '../assets/images/madeeasypictures/gallery3.jpg';
+import gallery4 from '../assets/images/madeeasypictures/gallery4.jpg';
+import gallery5 from '../assets/images/madeeasypictures/gallery5.jpg';
 
 const GallerySlider = () => {
   const galleryImages = [
     {
       id: 1,
-      url: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
-      title: 'Gated Estate Development'
+      url: gallery1,
+      title: 'Estate Land Development'
     },
     {
       id: 2,
-      url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
-      title: 'Modern Residential Property'
+      url: gallery2,
+      title: 'Property Allocation Event'
     },
     {
       id: 3,
-      url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
-      title: 'Premium Estate Layout'
+      url: gallery3,
+      title: 'Customer Engagement'
     },
     {
       id: 4,
-      url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-      title: 'Luxury Home Interior'
+      url: gallery4,
+      title: 'Happy Clients'
     },
     {
       id: 5,
-      url: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
-      title: 'Secured Estate Entrance'
-    },
-    {
-      id: 6,
-      url: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=80',
-      title: 'Contemporary Living Space'
+      url: gallery5,
+      title: 'Satisfied Property Owners'
     }
   ];
 
@@ -45,17 +45,31 @@ const GallerySlider = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    arrows: true,
     responsive: [
       {
-        breakpoint: 968,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: true,
         }
       },
       {
-        breakpoint: 640,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
         }
       }
     ]
@@ -66,10 +80,10 @@ const GallerySlider = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-            Our Portfolio
+            Our Events & Gallery
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Take a look at some of our completed projects and ongoing developments
+            Explore memorable moments from our property allocation events and customer celebrations
           </p>
         </div>
 
@@ -94,6 +108,9 @@ const GallerySlider = () => {
       </div>
 
       <style>{`
+        .slick-dots {
+          bottom: -40px;
+        }
         .slick-dots li button:before {
           font-size: 12px;
           color: #22c55e;
@@ -126,15 +143,32 @@ const GallerySlider = () => {
           .slick-next {
             right: -20px;
           }
+          .slick-prev:before,
+          .slick-next:before {
+            font-size: 32px;
+          }
         }
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .slick-prev {
-            left: 0;
+            left: 0px;
             z-index: 10;
           }
           .slick-next {
-            right: 0;
+            right: 0px;
             z-index: 10;
+          }
+          .slick-prev:before,
+          .slick-next:before {
+            font-size: 28px;
+          }
+        }
+        @media (max-width: 480px) {
+          .slick-prev,
+          .slick-next {
+            display: none !important;
+          }
+          .slick-dots {
+            bottom: -30px;
           }
         }
       `}</style>

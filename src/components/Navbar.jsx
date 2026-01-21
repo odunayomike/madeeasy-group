@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../assets/images/madeeasypictures/logo.jpg';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,19 +17,22 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Estates', href: '/estates' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Home', href: '/homes' },
+    { name: 'About', href: '/homes/about' },
+    { name: 'Estates', href: '/homes/estates' },
+    { name: 'Gallery', href: '/homes/gallery' },
+    { name: 'Contact', href: '/homes/contact' },
   ];
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <Link to="/" className="navbar-brand">
-          <span className="brand-logo">MADE EASY</span>
-          <span className="brand-tagline">Homes & Properties</span>
+        <Link to="/homes" className="navbar-brand">
+          <img src={logo} alt="MadeEasy Logo" className="brand-logo-img" />
+          <div className="brand-text">
+            <span className="brand-logo">MADE EASY</span>
+            <span className="brand-tagline">Homes & Properties</span>
+          </div>
         </Link>
 
         {/* Desktop Menu */}
